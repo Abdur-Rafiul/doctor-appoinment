@@ -14,10 +14,8 @@ use App\Http\Controllers\HomeController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Auth::routes();
 
-// Route::get('/', function () {
-//     return view('home');
-// });
 
 Route::get('/', [HomeController::class, 'Home'])->name('appointment.home');
 Route::post('/department', [HomeController::class, 'department']);
@@ -27,3 +25,14 @@ Route::post('/search', [HomeController::class, 'AppointmentSearch'])->name('appo
 
 Route::resource('/doctor', DoctorController::class);
 Route::resource('/appointment', AppointmentController::class);
+
+
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
