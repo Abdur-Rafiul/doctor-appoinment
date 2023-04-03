@@ -34,11 +34,37 @@ class HomeController extends Controller
 
         $doctor_id = $req->input('doctor_id');
         $doctor = Doctor::where('id', $doctor_id)->get();
-        return $doctor;
+        $date = date("Y-m-d");
+        $date = (string)$date;
+
+        // dd($date);
+        $count = Appointment::where('doctor_id',$doctor_id)->where('appointment_date',$date)->count();
+        if($count == 2){
+
+            return $count;
+        }else{
+
+            return $doctor;
+
+        }
+
+
 
 
     }
 
+    public function AppointmentSearch(Request $request){
 
+        $appointments=Appointment::where('appointment_no','LIKE','%'.$request->search."%")
+       ->orWhere('appointment_date','LIKE','%'.$request->search.'%')
+       ->orWhere('doctor_id','LIKE','%'.$request->search.'%')
+       ->orWhere('patient_name','LIKE','%'.$request->search.'%')
+       ->orWhere('patient_name','LIKE','%'.$request->search.'%')
+       ->orWhere('patient_phone','LIKE','%'.$request->search.'%')
+        ->simplePaginate(5);
+
+        return view('appoinment.home',compact('appointments'));
+
+    }
 
 }

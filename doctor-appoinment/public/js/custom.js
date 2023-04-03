@@ -1,3 +1,6 @@
+
+
+
 $('.department').on('change', function() {
 
 
@@ -52,6 +55,7 @@ $('.doctor').on('change', function() {
 
     // alert(department_id)
 
+
     axios.post('/doctors',{
 
         doctor_id : doctor_id,
@@ -60,9 +64,22 @@ $('.doctor').on('change', function() {
             if(response.status == 200){
 
 
+
+
+              if(response.data == 2){
+                toastr.success("Doctor is Not Available Now!");
+
+                $(".submit").addClass("disabled");
+
+            }else{
+                $(".submit").removeClass("disabled");
                 $('.fee').empty();
                 $('.fee').val(response.data[0].fee);
-                $('.total-amount').val(response.data[0].fee);
+                $('.total_amount').val(response.data[0].fee);
+                toastr.success("Doctor is Available Now!");
+
+
+            }
 
             }
         })
@@ -72,4 +89,28 @@ $('.doctor').on('change', function() {
 
 
         })
+
+
+
+
+})
+
+$('.paid_amount').on('change', function() {
+
+  let total_amount = $('.total_amount').val();
+  let paid_amount = $('.paid_amount').val();
+
+  if(total_amount == paid_amount){
+
+
+
+    $(".submit").removeClass("disabled");
+}else{
+    toastr.success("Total Amount and Paid Amount Not are Equal!");
+    $(".submit").addClass("disabled");
+
+}
+
+
+
 })

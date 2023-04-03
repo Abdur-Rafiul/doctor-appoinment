@@ -9,11 +9,15 @@
                 <div class="card mt-5">
                     <div class="card-header text-white" style="background: #16263d">
                       <h2 class="float-left">Appointment List</h2>
-                      <form class="d-flex" action="">
+                      <form class="" action="{{ route('appointment.search') }}" method="post">
                         @csrf
 
-                        <input class="form-control me-2" type="search" placeholder="Please Enter appointment_no or appointment_date or doctor or patient_name or patient_phone" aria-label="Search">
-                        <button class="btn btn-danger text-white" type="submit">Search</button>
+                        <div class="form-group">
+                            <label for="search">Appointment No or Appointment Date or Doctor Id No or Patient Name or Patient Phone</label>
+                            <input class="form-control me-2" id="search" name="search" type="search" placeholder="" aria-label="Search">
+                            <button class="btn btn-danger text-white mt-2" type="submit">Search</button>
+
+                        </div>
                       </form>
                       <h2 class="float-right">
                           <a href="{{ route('appointment.create') }}" class="text-white btn btn-outline-primary">+ New Appointment</a>

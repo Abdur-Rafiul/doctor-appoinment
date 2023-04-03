@@ -69,16 +69,16 @@
 
                       <div class="form-group">
                         <label for="total-amount">Total Amount</label>
-                        <input type="number" class="total-amount form-control" name="total_amount" id="total-amount" required/>
+                        <input type="number" class="total_amount form-control" name="total_amount" id="total-amount" required/>
                       </div>
 
                       <div class="form-group">
                         <label for="paid-amount">Paid Amount</label>
-                        <input type="number" class="paid-amount form-control" name="paid_amount" id="paid-amount" required/>
+                        <input type="number" class="paid_amount form-control" name="paid_amount" id="paid-amount" required/>
                       </div>
 
 
-                      <button type="submit" class="btn btn-primary mt-2">Submit</button>
+                      <button type="submit" class="submit btn btn-primary mt-2">Submit</button>
                     </form>
                   </div>
                 </div>

@@ -22,6 +22,7 @@ use App\Http\Controllers\HomeController;
 Route::get('/', [HomeController::class, 'Home'])->name('appointment.home');
 Route::post('/department', [HomeController::class, 'department']);
 Route::post('/doctors', [HomeController::class, 'doctor']);
+Route::post('/search', [HomeController::class, 'AppointmentSearch'])->name('appointment.search');
 
 
 Route::resource('/doctor', DoctorController::class);

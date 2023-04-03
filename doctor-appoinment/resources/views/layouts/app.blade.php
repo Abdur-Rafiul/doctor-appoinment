@@ -11,6 +11,7 @@
 
     <link rel="stylesheet" href="{{asset('css/datatables.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/datatables-select.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/toastr.min.css')}}">
 
     <link rel="stylesheet" href="{{asset('css/styles.css')}}">
 
@@ -66,7 +67,7 @@
 <script src="{{asset('js/datatables-select.min.js')}}"></script>
 
 <script src="{{asset('js/axios.min.js')}}"></script>
-<script src="{{asset('js/jquery.toast.js')}}"></script>
+<script src="{{asset('js/toastr.min.js')}}"></script>
 <script src="{{asset('js/custom.js')}}"></script>
 
 

@@ -19,7 +19,6 @@ class CreateDoctorsTable extends Migration
             $table->string('name');
             $table->string('phone');
             $table->string('fee');
-            $table->enum('status', ['Available', 'Not Available'])->default('Available');
             $table->timestamps();
         });
     }

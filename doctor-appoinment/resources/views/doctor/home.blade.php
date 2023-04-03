@@ -63,7 +63,6 @@
                             <th scope="col">Phone</th>
                             <th scope="col">Fee</th>
                             <th scope="col">Department</th>
-                            <th scope="col">Status</th>
                             <th scope="col" style="width: 150px">Action</th>
                           </tr>
                         </thead>
@@ -78,13 +77,7 @@
                               <td>{{ $doctor->fee }}</td>
                               <td>{{ $doctor->department->name }}</td>
 
-                               <td class="text-dark">
-                                @if ($doctor->status === "Available")
-                                    <span class=" text-primary ">{{ $doctor->status }}</span>
-                                @else
-                                  <span class=" text-danger">{{ $doctor->status }}</span>
-                                @endif
-                            </td>
+
 
                               <td>
                                   <a style="width:60px" class="btn btn-sm btn-outline-success" href="{{ route('doctor.edit', $doctor->id) }}">Edit</a>
